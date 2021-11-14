@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Cardapio extends StatefulWidget {
-  Cardapio({Key? key}) : super(key: key);
+  const Cardapio({Key? key}) : super(key: key);
 
   @override
   _CardapioState createState() => _CardapioState();

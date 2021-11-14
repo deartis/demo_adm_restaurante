@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CadValres extends StatefulWidget {
-  const CadValres({Key? key}) : super(key: key);
+class CadValores extends StatefulWidget {
+  const CadValores({Key? key}) : super(key: key);
 
   @override
-  _CadValresState createState() => _CadValresState();
+  _CadValoresState createState() => _CadValoresState();
 }
 
-class _CadValresState extends State<CadValres> {
+class _CadValoresState extends State<CadValores> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

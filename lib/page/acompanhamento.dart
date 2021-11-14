@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Acompanhamento extends StatefulWidget {
-  Acompanhamento({Key? key}) : super(key: key);
+  const Acompanhamento({Key? key}) : super(key: key);
 
   @override
   _AcompanhamentoState createState() => _AcompanhamentoState();
