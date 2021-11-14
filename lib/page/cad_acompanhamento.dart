@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class CadAcompanhamento extends StatefulWidget {
+  const CadAcompanhamento({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _CadAcompanhamentoState createState() => _CadAcompanhamentoState();
 }
 
-class _HomeState extends State<Home> {
+class _CadAcompanhamentoState extends State<CadAcompanhamento> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Column(
             children: const [
-              Text('Pagina'),
+              Text('Cadastro de acompanhamento'),
             ],
           ),
         ),

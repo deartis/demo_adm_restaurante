@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Entrega extends StatefulWidget {
+  const Entrega({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _EntregaState createState() => _EntregaState();
 }
 
-class _HomeState extends State<Home> {
+class _EntregaState extends State<Entrega> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Column(
             children: const [
-              Text('Pagina'),
+              Text('Entrega'),
             ],
           ),
         ),
