@@ -55,8 +55,16 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: const [
+                            Padding(
+                              padding: EdgeInsets.only(right: 5),
+                              child: Icon(
+                                Icons.brightness_1,
+                                size: 15,
+                                color: Cores.cor5,
+                              ),
+                            ),
                             Text(
                               'Cardápio',
                               style: TextStyle(
@@ -66,7 +74,7 @@ class _HomeState extends State<Home> {
                         ),
                         const Divider(
                           color: Cores.cor4,
-                          height: 1,
+                          height: 1.0,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,9 +109,18 @@ class _HomeState extends State<Home> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: const [
-                              Text('Frango a parmegiana'),
-                              Text('Inhoque'),
-                              Text('Bife com Frita'),
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Text('Frango a parmegiana'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Text('Inhoque'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Text('Bife com Frita'),
+                              ),
                             ],
                           ),
                         ),
@@ -113,6 +130,10 @@ class _HomeState extends State<Home> {
             ),
           ),
         );
+
+      case 'tela3':
+        return Container();
+
       default:
         return Card(
             child: Container(
@@ -171,7 +192,7 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            padding: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.all(10),
             child: Column(
               children: [_telas('tela2')],
             ),
