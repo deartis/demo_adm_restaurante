@@ -2,8 +2,10 @@
 import 'dart:ui';
 
 import 'package:demo_adm_restaurante/theme/cores.dart';
+import '../theme/gradient.dart';
 import 'package:flutter/material.dart';
 import '../widget/drawer.dart';
+import '../widget/header_title.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -37,6 +39,8 @@ class _HomeState extends State<Home> {
     switch (tela) {
       case 'tela2':
         return Card(
+          elevation: 0,
+          color: Colors.transparent,
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -136,65 +140,76 @@ class _HomeState extends State<Home> {
 
       default:
         return Card(
+            elevation: 0,
+            color: Colors.transparent,
             child: Container(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    const Text(
-                      'Não há cardápio publicado ainda.',
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const Text(
+                          'Não há cardápio publicado ainda.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: Text(
+                            'Clique abaixo para montar cardápio do dia.',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: TextButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Cores.cor6),
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/cardapio'),
+                              child: const Text(
+                                'Montar Cardápio',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              )),
+                        )
+                      ],
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Text(
-                        'Clique abaixo para montar cardápio do dia.',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: TextButton(
-                          style:
-                              TextButton.styleFrom(backgroundColor: Cores.cor6),
-                          onPressed: () =>
-                              Navigator.pushNamed(context, '/cardapio'),
-                          child: const Text(
-                            'Montar Cardápio',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          )),
-                    )
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ));
+            ));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: MenuLateral.menuL,
-      appBar: AppBar(
-        title: const Text("Home"),
-        centerTitle: true,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: Gradiente.bkgGradiente(),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: [_telas('tela2')],
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        drawer: MenuLateral.menuL,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              child: Column(
+                children: [
+                  HeaderTitle.headerTitle("Home"),
+                  _telas('tela2'),
+                ],
+              ),
             ),
           ),
         ),
